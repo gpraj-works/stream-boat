@@ -29,7 +29,8 @@ const Auth = () => {
 		}
 	}, [email, password]);
 
-	const register = useCallback(async () => {
+	const register = useCallback(async (e: any) => {
+		e.preventDefault();
 		try {
 			await axios.post('/api/register', { name, email, password });
 			login();
