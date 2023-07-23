@@ -36,19 +36,17 @@ const Auth = () => {
 	const register = useCallback(
 		async (e: any) => {
 			e.preventDefault();
-			const data = {
-				name,
-				email,
-				password,
-			};
 			try {
-				await axios.post('/api/register', data);
+				const response = (
+					await axios.post('/api/register', { name, email, password })
+				).data;
+				console.log(response);
 				// login(e);
 			} catch (error) {
 				console.log('auth page : ' + error);
 			}
 		},
-		[name, email, password]
+		[name, email, password, login]
 	);
 
 	return (
