@@ -43,7 +43,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             const existingMovie = await prismadb.movie.findUnique({
                 where: {
                     id: String(movieId),
-                  }
+                }
             });
 
             if (!existingMovie) {
@@ -57,7 +57,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                     email: currentUser.email || ''
                 },
                 data: {
-                    favoriteIds: String(updateFavoriteIds)
+                    favoriteIds: updateFavoriteIds
                 }
             });
 
