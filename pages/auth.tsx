@@ -40,7 +40,7 @@ const Auth = () => {
 				await axios.post('/api/register', { name, email, password });
 				login(e);
 			} catch (error) {
-				console.log(error);
+				console.log('auth page : ' + error);
 			}
 		},
 		[name, email, password, login]
