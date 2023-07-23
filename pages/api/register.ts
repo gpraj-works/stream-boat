@@ -1,8 +1,8 @@
 import bcrypt from 'bcrypt';
-import { NextApiRequest, NextApiResponse } from 'next';
+// import { NextApiRequest, NextApiResponse } from 'next';
 import prismadb from '@/lib/prismadb';
 
-export default async function (req: NextApiRequest, res: NextApiResponse) {
+export default async function (req, res) {
 
 	try {
 		const { name, email, password } = req.body;
