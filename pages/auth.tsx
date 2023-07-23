@@ -17,7 +17,8 @@ const Auth = () => {
 		);
 	}, []);
 	
-	const login = useCallback(async () => {
+	const login = useCallback(async (e:any) => {
+		e.preventDefault();
 		try {
 			await signIn('credentials', {
 				email,
