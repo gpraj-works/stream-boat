@@ -3,9 +3,6 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import prismadb from '@/lib/prismadb';
 
 export default async function (req: NextApiRequest, res: NextApiResponse) {
-	// if (req.method !== 'POST') {
-	// 	return res.status(405).end();
-	// }
 
 	try {
 		const { name, email, password } = req.body;
