@@ -16,29 +16,35 @@ const Auth = () => {
 			currentVariant === 'login' ? 'register' : 'login'
 		);
 	}, []);
-	
-	const login = useCallback(async (e:any) => {
-		e.preventDefault();
-		try {
-			await signIn('credentials', {
-				email,
-				password,
-				callbackUrl: '/profile',
-			});
-		} catch (error) {
-			console.log(error);
-		}
-	}, [email, password]);
 
-	const register = useCallback(async (e: any) => {
-		e.preventDefault();
-		try {
-			await axios.post('/api/register', { name, email, password });
-			login();
-		} catch (error) {
-			console.log(error);
-		}
-	}, [name, email, password, login]);
+	const login = useCallback(
+		async (e: any) => {
+			e.preventDefault();
+			try {
+				await signIn('credentials', {
+					email,
+					password,
+					callbackUrl: '/profile',
+				});
+			} catch (error) {
+				console.log(error);
+			}
+		},
+		[email, password]
+	);
+
+	const register = useCallback(
+		async (e: any) => {
+			e.preventDefault();
+			try {
+				await axios.post('/api/register', { name, email, password });
+				login(e);
+			} catch (error) {
+				console.log(error);
+			}
+		},
+		[name, email, password, login]
+	);
 
 	return (
 		<div className="relative h-full w-full bg-[url('/images/hero.jpg')] bg-no-repeat bg-fixed bg-cover">
