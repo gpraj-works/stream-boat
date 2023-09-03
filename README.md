@@ -60,9 +60,3 @@ To get started with StreamBoat, follow these steps:
    ```
 
 5. Open your web browser and navigate to `http://localhost:3000` to access StreamBoat.
-
-## Acknowledgments
-
-- Special thanks to the creators of Next.js, Prisma, MongoDB, Redux Toolkit, Tailwind CSS, and NextAuth for making this project possible.
-
-- StreamBoat logo design by [GP RAJ].
