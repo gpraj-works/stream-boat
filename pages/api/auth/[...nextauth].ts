@@ -18,7 +18,7 @@ export const authOptions: AuthOptions = {
 		}),
 		Credentials({
 			id: 'credentials',
-			name: 'Credentials',
+			name: 'credentials',
 			credentials: {
 				email: {
 					label: 'Email',
